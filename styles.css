@@ -7,19 +7,28 @@ body {
     padding: 0;
 }
 
+:root {
+    --primary-color: #0f0f0f;
+    --dark-color: #000;
+    --font-color: #fff;
+    --column-color: #3333;
+    --wrong-color: #ff0000;
+    --bg-wrong-color: #ffc0cb;
+    --correct-color: #00ff00;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 .navBar {
-    width: auto;
-    top: 0;
-    background: transparent;
+    width: 100%;
     display: flex;
+    position: fixed;
     align-items: center;
     justify-content: space-around;
-    color: #Fff;
+    top: 0;
+    color: var(--font-color);
     padding: 20px;
 }
 
@@ -31,12 +40,12 @@ html {
 
 .navWrap a {
     text-decoration: none;
-    color: #fff;
+    color: var(--font-color);
 }
 
 .home {
+    background-color: var(--dark-color);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -46,7 +55,7 @@ html {
 .settings {
     width: 100%;
     height: 100vh;
-    background: #fff;
+    background: var(--column-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,27 +65,76 @@ html {
     display: flex;
 }
 
-.language-selector {
-    margin-bottom: 20px;
-}
 
 .language-selector button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 12px;
     border-radius: 8px;
     cursor: pointer;
+    background: var(--column-color);
+    border: none;
+    outline: none;
+    color: var(--font-color);
 }
 
 
 .typing-test {
-    max-width: 900px;
-    width: 100%;
-    background: #3e3e3e;
-    color: #fff;
+    max-width: 1000px;
+    width: 90%;
+    height: 50%;
+    background: var(--primary-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 5em;
-    border-radius: 8px;
+    border-radius: 18px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapperTypeTest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    background: var(--column-color);
+    padding: 10px;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.timerValue {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.timerValue i {
+    font-size: 20px;
+}
+
+
+.timeSelector button {
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--font-color);
+    background: var(--column-color);
+    outline: none;
+    border: none;
+}
+
+.time-selector {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
 }
 
 .word-box {
@@ -87,6 +145,13 @@ html {
 
 .word-box span {
     padding: 2px;
+}
+
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .input {
@@ -103,9 +168,10 @@ textarea:focus, input:focus {
     width: fit-content;
     font-size: 12px;
     padding: 10px 20px;
+    color: var(--font-color);
     border: none;
     border-radius: 8px;
-    background: #1e1e1e;
+    background: var(--column-color);
 }
 
 .btn {
@@ -116,7 +182,7 @@ textarea:focus, input:focus {
 }
 
 .btn button {
-    background: #1e1e1e;
+    background: var(--column-color);
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -129,33 +195,34 @@ textarea:focus, input:focus {
 }
 
 .correct {
-    color: green;
+    color: var(--correct-color);
 }
 
 .incorrect {
-    color: red;
-    background-color: pink;
+    color: var(--wrong-color);
+    background-color: var(--bg-wrong-color);
 }
 
 .input-area.error {
-    border-color: red;
-    background-color: #ffe6e6;
+    border-color: var(--bg-wrong-color);
+    background-color: var(--font-color);
 }
 
 .correct {
-    color: green;
+    color: var(--correct-color);
 }
 
 .incorrect {
-    color: red;
-    background-color: pink;
+    color: var(--wrong-color);
+    background-color: var(--bg-wrong-color);
 }
 
 .input-area.error {
-    border-color: red;
+    border-color: var(--wrong-color);
 }
 
 
 .result {
-    color: #fff;
+    text-align: center;
+    color: var(--font-color);
 }

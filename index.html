@@ -22,50 +22,57 @@
         </div>
     </div>
 
-<div class="home" id="home">
+    <div class="home" id="home">
 
-    <div class="typing-test">
-        <div id="timer">Time Left: 30s</div>
-        <div id="word-box" class="word-box">
-            <!-- Words will be populated here based on selected language -->
-        </div>
-    </div>
+        <div class="typing-test">
 
-    
-    <div class="input">
-        <input type="text" id="input-area" class="input-area" placeholder="Start typing..." autofocus>
-    </div>
-    <div class="btn">
-        <!-- <button id="pause-btn" onclick="pauseTest()">Pause</button> -->
-        <button id="restart-btn" onclick="restartTest()">
-            <i class='bx bx-refresh'></i>
-        </button>
-    </div>
+            <div class="wrapperTypeTest">
 
-    <div id="result" class="result">
-        <!-- Skor akan muncul di sini -->
-    </div>
+                <div class="timerValue">
+                    <i class='bx bx-timer'></i>
+                    <p>Time Remaining</p>
+                    <div id="timer" class="time">
+                        30s
+                    </div>
+                </div>
 
-    <div class="settings" id="settings">
-        <div class="selector">
-            <div class="language-selector">
-                <button onclick="selectLanguage('id')">Indonesia</button>
-                <button onclick="selectLanguage('en')">English</button>
+                
+                <div class="timeSelector">
+                    <div class="time-selector">
+                        <button onclick="setTimeLimit(15)">15s</button>
+                        <button onclick="setTimeLimit(30)" class="active">30s</button> <!-- Set as default active -->
+                        <button onclick="setTimeLimit(60)">60s</button>
+                    </div>
+                </div>
+                
+                
+                <div class="language-selector">
+                    <button onclick="selectLanguage('id')">Indonesia</button>
+                    <button onclick="selectLanguage('en')">English</button>
+                </div>
+                
             </div>
-            
-            <div class="time-selector">
-                <label for="time-select">Select Time:</label>
-                <select id="time-select" onchange="updateTimeLimit()">
-                    <option value="15">15 seconds</option>
-                    <option value="30" selected>30 seconds</option>
-                    <option value="60">60 seconds</option>
-                </select>
-            </div>
-        </div>
 
+            <div id="word-box" class="word-box"></div>
+
+            <div class="column">
+                <div class="input">
+                    <input type="text" id="input-area" class="input-area" placeholder="start typing..." autofocus>
+                </div>
+                <div class="btn">
+                    <button id="restart-btn" onclick="restartTest()">
+                        <i class='bx bx-refresh'></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="result" class="result"></div>
+
+        </div>
 
         
     </div>
+
 
 
 </div>
