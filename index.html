@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="navBar">
+        <div class="textNav">
+            <h1>
+                Typingtest
+            </h1>
+        </div>
+        <div class="navWrap">
+            <a href="#home">Home</a>
+            <a href="#support">Support</a>
+        </div>
+    </div>
+
+<div class="home" id="home">
+
+    <div class="language-selector">
+        <button onclick="selectLanguage('id')">Bahasa Indonesia</button>
+        <button onclick="selectLanguage('en')">English</button>
+    </div>
+
+    <div class="time-selector">
+        <label for="time-select">Select Time:</label>
+        <select id="time-select" onchange="updateTimeLimit()">
+            <option value="15">15 seconds</option>
+            <option value="30" selected>30 seconds</option>
+            <option value="60">60 seconds</option>
+        </select>
+    </div>
+
+    <div class="typing-test">
+        <div id="timer">Time Left: 30s</div>
+        <div id="word-box" class="word-box">
+            <!-- Words will be populated here based on selected language -->
+        </div>
+        <input type="text" id="input-area" class="input-area" placeholder="Start typing..." autofocus>
+        <button id="pause-btn" onclick="pauseTest()">Pause</button>
+        <button id="restart-btn" onclick="restartTest()">Restart</button>
+    </div>
+
+    <div id="result" class="result">
+        <!-- Skor akan muncul di sini -->
+    </div>
+
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
